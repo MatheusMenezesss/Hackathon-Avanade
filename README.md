@@ -85,28 +85,7 @@ Salva Cartão de Produto ao final de cada campanha aprovada. Pré-popula a Fase 
 
 ---
 
-## Configuração
 
-```bash
-# Clonar e instalar dependências
-git clone https://github.com/seu-usuario/adpilot.git
-cd adpilot
-pip install -r requirements.txt
-
-# Copiar e preencher variáveis de ambiente
-cp .env.example .env
-```
-
-Variáveis necessárias em `.env`:
-
-```
-GOOGLE_CLOUD_VISION_KEY=
-LLM_API_KEY=
-LLM_ENDPOINT=
-DATABASE_URL=sqlite:///adpilot.db
-```
-
----
 
 ## Executando os testes
 
