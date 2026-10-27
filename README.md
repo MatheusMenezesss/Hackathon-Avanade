@@ -1,4 +1,4 @@
-# ADpilot — Copiloto Criativo
+# ADpilot - Copiloto Criativo
 
 Plataforma de orquestração criativa em ciclo fechado para marketing de varejo farmacêutico. Automatiza o desdobramento multicanal de peças, aplica auditoria regulatória por categoria de produto e retém memória operacional entre campanhas.
 
@@ -6,7 +6,7 @@ Plataforma de orquestração criativa em ciclo fechado para marketing de varejo 
 
 ## Visão geral
 
-O ADpilot atua como uma camada de orquestração entre o briefing e a publicação — trabalhando em paralelo com Figma e Canva, sem substituí-los. O fluxo é dividido em cinco fases sequenciais com checkpoint de aprovação humana em cada transição.
+O ADpilot atua como uma camada de orquestração entre o briefing e a publicação - trabalhando em paralelo com Figma e Canva, sem substituí-los. O fluxo é dividido em cinco fases sequenciais com checkpoint de aprovação humana em cada transição.
 
 ```
 F1 Briefing → F2 Marca → F3 Compositor → F4 Compliance Guard → F5 Memória
@@ -52,33 +52,33 @@ adpilot/
 
 ## Fases do sistema
 
-### F1 — Briefing Inteligente
+### F1 - Briefing Inteligente
 Recebe pedidos em texto, áudio ou webhook. LLM extrai SKU, preço e validade usando Structured Outputs — nunca infere dados ausentes. Cruza com o catálogo para identificar a classe regulatória e bloqueia medicamentos tarjados na origem.
 
 **Stack:** Python · FastAPI · Pydantic · Whisper (STT)
 
-### F2 — Manual de Marca Sintético
+### F2 - Manual de Marca Sintético
 Gera Design Tokens no padrão W3C DTCG a partir do manual parametrizado em JSON. Exporta arquivo compatível com Figma via Token Studio.
 
 **Stack:** Python · JSON Schema
 
-### F3 — Compositor por Camadas
+### F3 - Compositor por Camadas
 Recebe assets separados (fundo, packshot PNG transparente, textos) e os combina nas coordenadas definidas pelo Template Inteligente de cada formato. Renderiza via HTML/CSS headless para tipografia precisa.
 
 **Stack:** Python · Pillow · Playwright · JSON templates
 
-### F4 — Compliance Guard
+### F4 - Compliance Guard
 Pipeline de auditoria automatizada que retorna um dos cinco estados: pré-check aprovado, pendência de revisão, não conformidade detectada, fora do escopo automatizado ou aprovação formal concluída.
 
 Verificações:
 - Presença e legibilidade do texto legal obrigatório por SKU (RapidFuzz)
-- Contraste mínimo WCAG 2.1 AA — 4.5:1 (OpenCV)
-- Zona de segurança do logo — 15% da largura (Google Cloud Vision)
+- Contraste mínimo WCAG 2.1 AA - 4.5:1 (OpenCV)
+- Zona de segurança do logo - 15% da largura (Google Cloud Vision)
 - Preço na imagem vs. preço no briefing (OCR + comparação exata)
 
 **Stack:** Python · Google Cloud Vision API · OpenCV · RapidFuzz
 
-### F5 — Memória Operacional
+### F5 - Memória Operacional
 Salva Cartão de Produto ao final de cada campanha aprovada. Pré-popula a Fase 1 em ciclos subsequentes do mesmo produto ou sazonalidade. Registra histórico de erros do Guard para antecipar falhas recorrentes.
 
 **Stack:** Python · SQLite (MVP) · PostgreSQL (produção)
@@ -114,17 +114,17 @@ O conjunto ouro (`tests/compliance/`) contém 10 peças com erros plantados conh
 
 | Módulo | Status |
 |---|---|
-| F1 — Briefing + catálogo SKU | Em desenvolvimento |
-| F2 — Manual de Marca (JSON) | Em desenvolvimento |
-| F3 — Compositor por camadas | Em desenvolvimento |
-| F4 — Compliance Guard | Em desenvolvimento |
-| F5 — Cartão de Produto | Em desenvolvimento |
+| F1 - Briefing + catálogo SKU | Em desenvolvimento |
+| F2 - Manual de Marca (JSON) | Em desenvolvimento |
+| F3 - Compositor por camadas | Em desenvolvimento |
+| F4 - Compliance Guard | Em desenvolvimento |
+| F5 - Cartão de Produto | Em desenvolvimento |
 | Via Rápida (Fast-Track) | Em desenvolvimento |
-| Trend Radar / Mood Board Score | Fora do MVP — roadmap |
-| Correlação criativo × performance | Fora do MVP — roadmap 6–12 meses |
+| Trend Radar / Mood Board Score | Fora do MVP - roadmap |
+| Correlação criativo × performance | Fora do MVP - roadmap 6–12 meses |
 
 ---
 
 ## Licença
 
-Proprietário — uso restrito à equipe do projeto.
+Proprietário - uso restrito à equipe do projeto.
